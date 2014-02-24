@@ -1,9 +1,6 @@
-# mothership [![build status](https://secure.travis-ci.org/thlorenz/mothership.png)](http://travis-ci.org/thlorenz/mothership)
+'use strict';
 
-Helps a module find its package.json mothership.
-
-```js
-var findShip = require('mothership')
+var findShip = require('../')
   , path = require('path');
 
 findShip(
@@ -16,15 +13,14 @@ findShip(
       console.log('first mothership', res.path);  // => [..]/example/uno/package.json
   }
 )
-```
 
-## Installation
-
-    npm install mothership
-
-## API
-
-
-## License
-
-MIT
+findShip(
+    path.join(__dirname, 'uno', 'dos', 'tres')
+  , function ismothership (pack) {
+      return pack.name === 'dos';
+    }
+  , function (err, res) {
+      if (err) return console.error(err);
+      console.log('second mothership', res.path);  // => [..]/example/uno/dos/package.json
+  }
+)
