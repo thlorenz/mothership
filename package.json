@@ -1,6 +1,6 @@
 {
   "name": "mothership",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Helps a module find its package.json mothership.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,14 @@
   "devDependencies": {
     "tap": "~0.4.3"
   },
-  "keywords": [ "find", "resolve", "package.json", "condition", "predicate", "root" ],
+  "keywords": [
+    "find",
+    "resolve",
+    "package.json",
+    "condition",
+    "predicate",
+    "root"
+  ],
   "author": {
     "name": "Thorsten Lorenz",
     "email": "thlorenz@gmx.de",
