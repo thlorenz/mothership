@@ -6,9 +6,13 @@ var findParentDir = require('find-parent-dir')
 var go = module.exports = 
 
 /**
- * Searches upwarts from start for package.json, asking for each if it is the mothership.
+ * Searches upwards from start for package.json files, asking for each if it is the mothership.
  * If a mothership is found it calls back with that.
  * If it reaches the top of the univers it calls back with nothing.
+ *
+ * ##### mothership result
+ *  - `path`: full path to the `package.json` that is the mother ship
+ *  - `pack`: the `package.json` object, same that was passed to ismothership
  * 
  * @name mothership
  * @function
