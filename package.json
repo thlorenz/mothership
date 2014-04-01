@@ -1,6 +1,6 @@
 {
   "name": "mothership",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Helps a module find its package.json mothership.",
   "main": "index.js",
   "scripts": {
