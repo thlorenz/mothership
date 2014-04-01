@@ -1,9 +1,9 @@
 'use strict';
 
-var findShip = require('../')
+var mothership = require('../')
   , path = require('path');
 
-findShip(
+mothership(
     path.join(__dirname, 'uno', 'dos', 'tres')
   , function ismothership (pack) {
       return !!(pack.dependencies && pack.dependencies.unodep);
@@ -14,7 +14,7 @@ findShip(
   }
 )
 
-findShip(
+mothership(
     path.join(__dirname, 'uno', 'dos', 'tres')
   , function ismothership (pack) {
       return pack.name === 'dos';

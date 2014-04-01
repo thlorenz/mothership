@@ -3,10 +3,10 @@
 Helps a module find its `package.json` mothership.
 
 ```js
-var findShip = require('mothership')
+var mothership = require('mothership')
   , path = require('path');
 
-findShip(
+mothership(
     path.join(__dirname, 'uno', 'dos', 'tres')
   , function ismothership (pack) {
       return !!(pack.dependencies && pack.dependencies.unodep);
@@ -16,6 +16,16 @@ findShip(
       console.log('first mothership', res.path);  // => [..]/example/uno/package.json
   }
 )
+
+// Synchronous
+var res = mothership.sync(
+    path.join(__dirname, 'uno', 'dos', 'tres')
+  , function ismothership (pack) {
+      return !!(pack.dependencies && pack.dependencies.unodep);
+    }
+)      
+
+console.log('found mothership', res.path);  // => [..]/example/uno/package.json
 ```
 
 ## Installation
