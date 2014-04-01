@@ -38,3 +38,19 @@ function mothership(start, ismothership, cb) {
 
   })(start);
 }
+
+go.sync = function (start, ismothership) {
+  return (function findShip (root) {
+    var packageDir = findParentDir.sync(root, 'package.json')
+
+      var pack;
+      try {
+        pack = require(path.join(packageDir, 'package.json'));
+        if (ismothership(pack)) return { path: path.join(packageDir, 'package.json'), pack: pack };
+        return findShip(path.resolve(root, '..'));
+      } catch (e) {
+        return false
+      }
+
+  })(start);
+}
