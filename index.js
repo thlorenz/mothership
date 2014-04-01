@@ -39,7 +39,16 @@ function mothership(start, ismothership, cb) {
   })(start);
 }
 
-go.sync = function (start, ismothership) {
+/**
+ * Synchronous version of mothership.
+ * 
+ * @name mothership::sync
+ * @function
+ * @param {string} start full path at which to start looking for the mothership
+ * @param {function} ismothership invoked with the package object, needs to return true if it is the mothership
+ * @return {string} full path to package.json that is the mothership or `null` if it wasn't found
+ */
+go.sync = function sync(start, ismothership) {
   return (function findShip (root) {
     var packageDir = findParentDir.sync(root, 'package.json')
 

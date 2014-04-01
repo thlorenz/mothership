@@ -94,6 +94,62 @@ If it reaches the top of the univers it calls back with nothing.</p>
 </ul></dd>
 </dl>
 </dd>
+<dt>
+<h4 class="name" id="mothership::sync"><span class="type-signature"></span>mothership::sync<span class="signature">(start, ismothership)</span><span class="type-signature"> &rarr; {string}</span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Synchronous version of mothership.</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>start</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="description last"><p>full path at which to start looking for the mothership</p></td>
+</tr>
+<tr>
+<td class="name"><code>ismothership</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="description last"><p>invoked with the package object, needs to return true if it is the mothership</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/mothership/blob/master/index.js">index.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/mothership/blob/master/index.js#L42">lineno 42</a>
+</li>
+</ul></dd>
+</dl>
+<h5>Returns:</h5>
+<div class="param-desc">
+<p>full path to package.json that is the mothership or <code>null</code> if it wasn't found</p>
+</div>
+<dl>
+<dt>
+Type
+</dt>
+<dd>
+<span class="param-type">string</span>
+</dd>
+</dl>
+</dd>
 </dl>
 </article>
 </section>
