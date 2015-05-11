@@ -26,13 +26,19 @@ function mothership(start, ismothership, cb) {
       if (err) return cb(err);
       if (!packageDir) return cb();
 
-      var pack;
+      var pack, result;
       try {
         pack = require(path.join(packageDir, 'package.json'));
-        if (ismothership(pack)) return cb(null, { path: path.join(packageDir, 'package.json'), pack: pack });
-        findShip(path.resolve(root, '..'));
+        if (ismothership(pack)) {
+          result = { path: path.join(packageDir, 'package.json'), pack: pack };
+        } else {
+          findShip(path.resolve(root, '..'));
+        }
       } catch (e) {
-        cb(e);
+        return cb(e);
+      }
+      if (result) {
+        return cb(null, result);
       }
     });
 
